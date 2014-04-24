@@ -1,0 +1,5 @@
+<form action="/members/<%= member_id %>" method="post">
+  <input type="hidden" name="_method" value="delete" /> 
+  <input type="submit" value="Delete member" />
+  <a href="/destroy/members/<%= @post.id %>">Supprimer!</a>
+</form>

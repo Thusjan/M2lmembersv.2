@@ -1,0 +1,14 @@
+<hr>
+  <h1>Liste des membres</h1>
+    <% @members.each do |member| %>
+      <%= member.nom %></a></p>
+      <p><%= member.prenom %></p>
+      <p><%= member.date %></p>
+      <p><%=h member.adresse %></p>
+      <p><%= member.cp %></p>
+      <p><%= member.email %></p>
+      <p><%= member.tel %></a></p>
+
+      Pour tuer le membre, cliquez ici :
+  <a href="/members/destroy/<%= @member.id %>">BIMM!</a>    <% end %>
+  <hr>

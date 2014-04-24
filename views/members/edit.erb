@@ -1,0 +1,14 @@
+<h1>Edit member</h1>
+<form action="/members/<%= @member.id %>" method="post">
+  <input type="hidden" name="_method" value="put" />
+
+  <label for="post_title">Title:</label><br />
+  <input id="post_title" name="member[nom]" type="text" value="<%= @member.nom %>" />
+  <br />
+
+  <label for="post_body">Body:</label><br />
+  <textarea id="post_body" name="post[body]" rows="5"><%= @post.body %></textarea>
+  <br />
+
+  <input type="submit" value="Edit Members" />
+</form>

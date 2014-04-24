@@ -1,0 +1,31 @@
+<hr>
+  <h1>Liste des membres</h1>
+ <div id="ici"></div>
+
+<script id="elem_html" type = "text/template">
+  {{#members}}
+  <li>
+  User ID: #<a href="/members/show/{{id}}">{{id}}</a>
+  <a href="/members/{{id}}">{{ prenom }}{{ nom }}</a></li>
+
+  {{/members}}
+
+</script>
+
+<script>
+$( document ).ready(function() {
+  $.getJSON("/members.json", function(data){
+    var template = $("#elem_html").html();
+    var html = Mustache.to_html(template, data);
+    $("#ici").html(html);
+  });
+});
+</script>
+
+       Pour tuer le membre, cliquez ici :
+  <a href="/members/destroy/{{ member.id }}">BIMM!</a>  
+  <hr>
+
+Pour ajouter membre, cliquez <a href="/members/new">ICI</a>  
+  <hr>
+
